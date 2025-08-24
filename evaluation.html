@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evaluación de Ansiedad - Sensus</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navegación -->
+    <header class="main-header">
+        <nav class="main-nav">
+            <div class="nav-container">
+                <div class="logo">
+                    <span>Sensus</span>
+                </div>
+                <div class="nav-links">
+                    <a href="index.html" class="nav-item"><i class="fas fa-home"></i>Inicio</a>
+                    <a href="anxiety-types.html" class="nav-item"><i class="fas fa-brain"></i>Tipos de Ansiedad</a>
+                    <a href="evaluation.html" class="nav-item active"><i class="fas fa-clipboard-check"></i>Evaluación</a>
+                    <a href="therapeutic-help.html" class="nav-item"><i class="fas fa-hands-helping"></i>Ayuda Terapéutica</a>
+                    <a href="blog.html" class="nav-item"><i class="fas fa-blog"></i>Blog</a>
+                    <a href="contact.html" class="nav-item"><i class="fas fa-envelope"></i>Contacto</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="page-hero" style="position:relative;overflow:hidden;">
+        <div id="particles-evaluation" class="section-particles"></div>
+        <div class="container" style="position:relative;z-index:1;">
+            <h1>Evaluación de Ansiedad</h1>
+            <p>Realiza el test de Hamilton para evaluar tu nivel de ansiedad</p>
+        </div>
+    </section>
+
+    <!-- Contenido Principal -->
+    <main class="evaluation-content">
+        <div class="container">
+            <!-- Introducción al Test -->
+            <section class="test-intro">
+                <h2>Test de Hamilton para la Ansiedad</h2>
+                <p>El test de Hamilton es una herramienta validada científicamente para evaluar la severidad de la ansiedad. Consta de 14 preguntas que evalúan diferentes aspectos de la ansiedad.</p>
+                
+                <div class="test-instructions">
+                    <h3>Instrucciones</h3>
+                    <ul>
+                        <li>Lee cada pregunta cuidadosamente</li>
+                        <li>Selecciona la opción que mejor describa cómo te has sentido en la última semana</li>
+                        <li>Responde todas las preguntas honestamente</li>
+                        <li>El test toma aproximadamente 10 minutos</li>
+                    </ul>
+                </div>
+
+                <div class="test-disclaimer">
+                    <p><strong>Importante:</strong> Este test es solo una herramienta de evaluación inicial y no reemplaza el diagnóstico de un profesional de la salud mental.</p>
+                </div>
+
+                <button id="startTestBtn" class="cta-button" onclick="window.location.href='hamilton-test.html'">Comenzar Test</button>
+            </section>
+
+            <!-- Formulario del Test -->
+            <form id="hamiltonForm" class="test-form" style="display: none;">
+                <div class="question-group">
+                    <h3>1. Estado de ánimo ansioso</h3>
+                    <p>Preocupaciones, anticipación de lo peor, aprensión, irritabilidad.</p>
+                    <div class="options">
+                        <label>
+                            <input type="radio" name="q1" value="0" required>
+                            Ausente
+                        </label>
+                        <label>
+                            <input type="radio" name="q1" value="1" required>
+                            Leve
+                        </label>
+                        <label>
+                            <input type="radio" name="q1" value="2" required>
+                            Moderado
+                        </label>
+                        <label>
+                            <input type="radio" name="q1" value="3" required>
+                            Grave
+                        </label>
+                        <label>
+                            <input type="radio" name="q1" value="4" required>
+                            Muy grave
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Preguntas 2-14 similares -->
+                <!-- ... (resto de preguntas) ... -->
+
+                <button type="submit" class="submit-test-btn">Evaluar Resultados</button>
+            </form>
+
+            <!-- Resultados del Test -->
+            <section id="testResults" class="test-results" style="display: none;">
+                <h2>Resultados de tu Evaluación</h2>
+                
+                <div class="score-display">
+                    <div class="score-circle">
+                        <span id="totalScore">0</span>
+                        <span class="score-label">Puntos</span>
+                    </div>
+                </div>
+
+                <div class="result-interpretation">
+                    <h3>Interpretación</h3>
+                    <p id="resultText"></p>
+                </div>
+
+                <div class="recommendations">
+                    <h3>Recomendaciones</h3>
+                    <ul id="recommendationsList"></ul>
+                </div>
+
+                <div class="next-steps">
+                    <h3>Próximos Pasos</h3>
+                    <p>Basado en tus resultados, te recomendamos:</p>
+                    <div class="steps-grid">
+                        <div class="step-card">
+                            <i class="fas fa-user-md"></i>
+                            <h4>Consulta Profesional</h4>
+                            <p>Programa una cita con un profesional de la salud mental.</p>
+                        </div>
+                        <div class="step-card">
+                            <i class="fas fa-book"></i>
+                            <h4>Recursos Educativos</h4>
+                            <p>Explora nuestros recursos sobre manejo de la ansiedad.</p>
+                        </div>
+                        <div class="step-card">
+                            <i class="fas fa-heart"></i>
+                            <h4>Autocuidado</h4>
+                            <p>Implementa técnicas de relajación y mindfulness.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cta-container">
+                    <a href="therapeutic-help.html" class="cta-button">Explorar Opciones de Ayuda</a>
+                </div>
+            </section>
+
+            <!-- Nueva sección de Progreso -->
+            <section class="progress-section">
+                <div class="progress-container">
+                    <div class="progress-header">
+                        <h2>Tu Progreso</h2>
+                        <p>Mantén un registro de tu evolución</p>
+                    </div>
+                    <div class="progress-stats">
+                        <div class="stat-item">
+                            <i class="fas fa-chart-line"></i>
+                            <h3>Última Evaluación</h3>
+                            <p class="stat-value">15/56</p>
+                            <p class="stat-label">Ansiedad Moderada</p>
+                        </div>
+                        <div class="stat-item">
+                            <i class="fas fa-calendar-check"></i>
+                            <h3>Próxima Evaluación</h3>
+                            <p class="stat-value">En 2 semanas</p>
+                            <p class="stat-label">Recomendado</p>
+                        </div>
+                        <div class="stat-item">
+                            <i class="fas fa-arrow-trend-down"></i>
+                            <h3>Mejora</h3>
+                            <p class="stat-value">-5 puntos</p>
+                            <p class="stat-label">Desde la última evaluación</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Nueva sección de Historial -->
+            <section class="history-section">
+                <h2>Historial de Evaluaciones</h2>
+                <div class="history-timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-date">
+                            <span class="date">15 Mar 2024</span>
+                            <span class="score">15/56</span>
+                        </div>
+                        <div class="timeline-content">
+                            <h3>Ansiedad Moderada</h3>
+                            <p>Mejora notable en síntomas de ansiedad generalizada</p>
+                            <div class="timeline-actions">
+                                <button class="btn-secondary">Ver Detalles</button>
+                                <button class="btn-secondary">Comparar</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-date">
+                            <span class="date">01 Mar 2024</span>
+                            <span class="score">20/56</span>
+                        </div>
+                        <div class="timeline-content">
+                            <h3>Ansiedad Moderada a Grave</h3>
+                            <p>Inicio de tratamiento con mejoras en síntomas físicos</p>
+                            <div class="timeline-actions">
+                                <button class="btn-secondary">Ver Detalles</button>
+                                <button class="btn-secondary">Comparar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Nueva sección de Recomendaciones Personalizadas -->
+            <section class="personalized-recommendations">
+                <h2>Recomendaciones Personalizadas</h2>
+                <div class="recommendations-grid">
+                    <div class="recommendation-card">
+                        <i class="fas fa-brain"></i>
+                        <h3>Ejercicios de Respiración</h3>
+                        <p>Basado en tus síntomas de ansiedad física</p>
+                        <a href="#" class="btn-secondary">Practicar Ahora</a>
+                    </div>
+                    
+                    <div class="recommendation-card">
+                        <i class="fas fa-book"></i>
+                        <h3>Lecturas Recomendadas</h3>
+                        <p>Artículos sobre manejo de ansiedad social</p>
+                        <a href="#" class="btn-secondary">Ver Artículos</a>
+                    </div>
+                    
+                    <div class="recommendation-card">
+                        <i class="fas fa-video"></i>
+                        <h3>Videos de Ayuda</h3>
+                        <p>Técnicas de relajación para ansiedad</p>
+                        <a href="#" class="btn-secondary">Ver Videos</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Nueva sección de Seguimiento -->
+            <section class="tracking-section">
+                <h2>Seguimiento Diario</h2>
+                <div class="tracking-container">
+                    <div class="tracking-form">
+                        <h3>¿Cómo te sientes hoy?</h3>
+                        <div class="mood-selector">
+                            <button class="mood-btn" data-mood="1">😊</button>
+                            <button class="mood-btn" data-mood="2">😐</button>
+                            <button class="mood-btn" data-mood="3">😔</button>
+                            <button class="mood-btn" data-mood="4">😢</button>
+                            <button class="mood-btn" data-mood="5">😡</button>
+                        </div>
+                        <textarea placeholder="¿Qué te gustaría compartir sobre tu día?"></textarea>
+                        <button class="btn-primary">Guardar Registro</button>
+                    </div>
+                    <div class="tracking-stats">
+                        <h3>Estadísticas de la Semana</h3>
+                        <div class="stats-chart">
+                            <!-- Aquí irá el gráfico de estadísticas -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Nueva sección de Objetivos -->
+            <section class="goals-section">
+                <h2>Objetivos de Tratamiento</h2>
+                <div class="goals-container">
+                    <div class="goal-card">
+                        <div class="goal-header">
+                            <i class="fas fa-bullseye"></i>
+                            <h3>Reducir Síntomas Físicos</h3>
+                        </div>
+                        <div class="goal-progress">
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 75%"></div>
+                            </div>
+                            <span class="progress-text">75% Completado</span>
+                        </div>
+                        <p>Objetivo: Reducir la frecuencia de síntomas físicos de ansiedad</p>
+                    </div>
+                    
+                    <div class="goal-card">
+                        <div class="goal-header">
+                            <i class="fas fa-comments"></i>
+                            <h3>Mejorar Habilidades Sociales</h3>
+                        </div>
+                        <div class="goal-progress">
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 60%"></div>
+                            </div>
+                            <span class="progress-text">60% Completado</span>
+                        </div>
+                        <p>Objetivo: Aumentar la confianza en situaciones sociales</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Sensus</h3>
+                    <p>Tu compañero en el camino hacia el bienestar mental.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Enlaces Rápidos</h3>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="anxiety-types.html">Tipos de Ansiedad</a></li>
+                        <li><a href="evaluation.html">Evaluación</a></li>
+                        <li><a href="therapeutic-help.html">Ayuda Terapéutica</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contacto</h3>
+                    <p>Email: sensusdes@gmail.com</p>
+                    <p>Instagram: <a href="https://instagram.com/sensus_des" target="_blank">@sensus_des</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Sensus. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html> 

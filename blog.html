@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Sensus</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body { background: linear-gradient(135deg, #f8fafc 0%, #e3e9f7 100%); }
+        .blog-banner {
+            background: linear-gradient(120deg, #4a90e2 60%, #64b5f6 100%);
+            color: #fff;
+            border-radius: 18px;
+            padding: 2rem 1.5rem 1.5rem 1.5rem;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            box-shadow: 0 4px 24px rgba(74,144,226,0.08);
+        }
+        .blog-banner img {
+            width: 90px; height: 90px; border-radius: 50%; box-shadow: 0 2px 8px rgba(0,0,0,0.08); background: #fff; object-fit: cover;
+        }
+        .blog-banner .blog-bienvenida {
+            flex: 1;
+        }
+        .blog-article-block {
+            background: #fff; border-radius: 14px; box-shadow: 0 2px 8px rgba(74,144,226,0.06); padding: 1.2rem 1.5rem; margin-bottom: 1.2rem; display: flex; align-items: flex-start; gap: 18px;
+        }
+        .blog-article-icon {
+            font-size: 2.2rem; color: #4a90e2; margin-top: 2px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navegación -->
+    <header class="main-header">
+        <nav class="main-nav">
+            <div class="nav-container">
+                <div class="logo">
+                    <span>Sensus</span>
+                </div>
+                <div class="nav-links">
+                    <a href="index.html" class="nav-item"><i class="fas fa-home"></i>Inicio</a>
+                    <a href="anxiety-types.html" class="nav-item"><i class="fas fa-brain"></i>Tipos de Ansiedad</a>
+                    <a href="evaluation.html" class="nav-item"><i class="fas fa-clipboard-check"></i>Evaluación</a>
+                    <a href="therapeutic-help.html" class="nav-item"><i class="fas fa-hands-helping"></i>Ayuda Terapéutica</a>
+                    <a href="blog.html" class="nav-item active"><i class="fas fa-blog"></i>Blog</a>
+                    <a href="contact.html" class="nav-item"><i class="fas fa-envelope"></i>Contacto</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main class="container" style="margin-top:120px;max-width:900px;position:relative;overflow:hidden;">
+        <div id="particles-blog" class="section-particles" style="position:absolute;top:0;left:0;width:100%;height:100%;z-index:0;"></div>
+        <div style="position:relative;z-index:1;">
+        <div class="blog-banner">
+            <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=facearea&w=256&q=80" alt="Blog Sensus">
+            <div class="blog-bienvenida">
+                <h1 class="page-title" style="color:#fff;"><i class="fas fa-blog"></i> Blog de Sensus</h1>
+                <p class="page-description" style="color:#e3e9f7;">Bienvenido/a al blog de Sensus. Aquí encontrarás inspiración, recursos y novedades para tu bienestar emocional.</p>
+            </div>
+        </div>
+        <section class="blog-article-block">
+            <div class="blog-article-icon"><i class="fas fa-star"></i></div>
+            <div>
+                <h2 style="color:var(--primary-color);margin-bottom:0.3rem;">Próximamente: Cómo manejar la ansiedad en el día a día</h2>
+                <p>Un artículo práctico con consejos y ejercicios para afrontar la ansiedad en situaciones cotidianas.</p>
+            </div>
+        </section>
+        <section class="blog-article-block">
+            <div class="blog-article-icon"><i class="fas fa-leaf"></i></div>
+            <div>
+                <h2 style="color:var(--primary-color);margin-bottom:0.3rem;">Próximamente: Mindfulness para principiantes</h2>
+                <p>Descubre cómo la atención plena puede ayudarte a reducir el estrés y mejorar tu calidad de vida.</p>
+            </div>
+        </section>
+        <section class="blog-article-block">
+            <div class="blog-article-icon"><i class="fas fa-users"></i></div>
+            <div>
+                <h2 style="color:var(--primary-color);margin-bottom:0.3rem;">Próximamente: Historias de superación de la comunidad Sensus</h2>
+                <p>Testimonios reales de personas que han transformado su vida con apoyo y herramientas adecuadas.</p>
+            </div>
+        </section>
+        <section class="tool-card" style="background:var(--gradient-bg);color:white;margin-bottom:2rem;">
+            <h3 style="margin-bottom:0.5rem;"><i class="fas fa-lightbulb"></i> Mensaje Motivacional</h3>
+            <blockquote style="font-size:1.1rem;opacity:0.95;">"Cada pequeño paso cuenta en tu camino hacia el bienestar. ¡Sigue adelante!"</blockquote>
+            <div style="text-align:right;font-size:0.95em;opacity:0.8;">- Equipo Sensus</div>
+        </section>
+        <section>
+            <div class="tool-card" style="margin-bottom:1rem;">
+                <h2>¡Próximamente!</h2>
+                <p>El blog de Sensus estará disponible muy pronto con artículos y recursos útiles para tu bienestar.</p>
+            </div>
+        </section>
+    </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Sensus</h3>
+                    <p>Tu compañero en el camino hacia el bienestar mental.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Enlaces Rápidos</h3>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="anxiety-types.html">Tipos de Ansiedad</a></li>
+                        <li><a href="evaluation.html">Evaluación</a></li>
+                        <li><a href="therapeutic-help.html">Ayuda Terapéutica</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contacto</h3>
+                    <p>Email: sensusdes@gmail.com</p>
+                    <p>Instagram: <a href="https://instagram.com/sensus_des" target="_blank">@sensus_des</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Sensus. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html> 

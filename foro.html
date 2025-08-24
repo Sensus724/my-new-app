@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foro - Sensus</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body { background: linear-gradient(135deg, #f8fafc 0%, #e3e9f7 100%); }
+        .foro-banner {
+            background: linear-gradient(120deg, #4a90e2 60%, #64b5f6 100%);
+            color: #fff;
+            border-radius: 18px;
+            padding: 2rem 1.5rem 1.5rem 1.5rem;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            box-shadow: 0 4px 24px rgba(74,144,226,0.08);
+        }
+        .foro-banner img {
+            width: 90px; height: 90px; border-radius: 50%; box-shadow: 0 2px 8px rgba(0,0,0,0.08); background: #fff; object-fit: cover;
+        }
+        .foro-banner .foro-bienvenida {
+            flex: 1;
+        }
+        .foro-msg-avatar {
+            width: 44px; height: 44px; border-radius: 50%; background: #e3e9f7; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-right: 12px;
+        }
+        .foro-msg-block {
+            background: #fff; border-radius: 14px; box-shadow: 0 2px 8px rgba(74,144,226,0.06); padding: 1rem 1.2rem; margin-bottom: 1.2rem; display: flex; align-items: flex-start; gap: 10px;
+        }
+        .foro-msg-block strong { color: #4a90e2; }
+        .foro-msg-block .foro-msg-date { color: #888; font-size: 0.9em; margin-left: auto; }
+        .foro-msg-block p { margin: 8px 0 0 0; }
+    </style>
+</head>
+<body>
+    <!-- Navegación -->
+    <header class="main-header">
+        <nav class="main-nav">
+            <div class="nav-container">
+                <div class="logo">
+                    <span>Sensus</span>
+                </div>
+                <div class="nav-links">
+                    <a href="index.html" class="nav-item"><i class="fas fa-home"></i>Inicio</a>
+                    <a href="anxiety-types.html" class="nav-item"><i class="fas fa-brain"></i>Tipos de Ansiedad</a>
+                    <a href="evaluation.html" class="nav-item"><i class="fas fa-clipboard-check"></i>Evaluación</a>
+                    <a href="therapeutic-help.html" class="nav-item"><i class="fas fa-hands-helping"></i>Ayuda Terapéutica</a>
+                    <a href="blog.html" class="nav-item"><i class="fas fa-blog"></i>Blog</a>
+                    <a href="contact.html" class="nav-item"><i class="fas fa-envelope"></i>Contacto</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main class="container" style="margin-top:120px;max-width:700px;position:relative;overflow:hidden;">
+        <div id="particles-foro" class="section-particles" style="position:absolute;top:0;left:0;width:100%;height:100%;z-index:0;"></div>
+        <div style="position:relative;z-index:1;">
+        <div class="foro-banner">
+            <img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=facearea&w=256&q=80" alt="Comunidad Sensus">
+            <div class="foro-bienvenida">
+                <h1 class="page-title" style="color:#fff;"><i class="fas fa-comments"></i> Foro de la Comunidad</h1>
+                <p class="page-description" style="color:#e3e9f7;">¡Bienvenido/a! Este es tu espacio seguro para compartir, aprender y apoyarte en la comunidad Sensus. Recuerda: aquí todos sumamos. 💙</p>
+            </div>
+        </div>
+        <section class="tool-card" style="background:var(--light-background);margin-bottom:2rem;">
+            <h2 style="margin-bottom:0.5rem;color:var(--primary-color);"><i class="fas fa-users"></i> Instrucciones</h2>
+            <ul style="margin-left:1.5rem;">
+                <li>Comparte tus experiencias, consejos o preguntas sobre ansiedad y bienestar.</li>
+                <li>Lee y responde a otros miembros con respeto y empatía.</li>
+                <li>No publiques datos personales ni mensajes ofensivos.</li>
+            </ul>
+        </section>
+        <section class="tool-card" style="background:var(--gradient-bg);color:white;margin-bottom:2rem;">
+            <h3 style="margin-bottom:0.5rem;"><i class="fas fa-star"></i> Mensaje Destacado</h3>
+            <blockquote style="font-size:1.1rem;opacity:0.95;">"La comunidad Sensus me ha ayudado a sentirme acompañado y comprendido. ¡Gracias a todos por compartir!"</blockquote>
+            <div style="text-align:right;font-size:0.95em;opacity:0.8;">- Usuario Anónimo</div>
+        </section>
+        <section>
+            <form id="foro-form" class="tool-card" style="margin-bottom:2rem;">
+                <div class="form-group">
+                    <label for="foro-nombre">Nombre</label>
+                    <input type="text" id="foro-nombre" required maxlength="30" placeholder="Tu nombre o apodo" style="width:100%;">
+                </div>
+                <div class="form-group">
+                    <label for="foro-mensaje">Mensaje</label>
+                    <textarea id="foro-mensaje" required maxlength="300" placeholder="Escribe tu mensaje..." style="width:100%;height:70px;"></textarea>
+                </div>
+                <button type="submit" class="cta-button"><i class="fas fa-paper-plane"></i> Publicar</button>
+            </form>
+            <div id="foro-wall">
+                <!-- Aquí se mostrarán los mensajes -->
+            </div>
+        </section>
+    </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Sensus</h3>
+                    <p>Tu compañero en el camino hacia el bienestar mental.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Enlaces Rápidos</h3>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="anxiety-types.html">Tipos de Ansiedad</a></li>
+                        <li><a href="evaluation.html">Evaluación</a></li>
+                        <li><a href="therapeutic-help.html">Ayuda Terapéutica</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contacto</h3>
+                    <p>Email: sensusdes@gmail.com</p>
+                    <p>Instagram: <a href="https://instagram.com/sensus_des" target="_blank">@sensus_des</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Sensus. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+    // Avatares aleatorios (emojis)
+    const foroAvatars = ['🦋','🦉','🦄','🐧','🐢','🐱','🐶','🦊','🐻','🐼','🐨','🦁','🐯','🐸','🐙','🐧','🦜','🦩','🦚','🦥','🦦','🦨','🦡','🦔','🦦','🦭','🦦','🦦','🦦','🦦'];
+    function getRandomAvatar(name) {
+        let hash = 0;
+        for (let i = 0; i < name.length; i++) hash += name.charCodeAt(i);
+        return foroAvatars[hash % foroAvatars.length];
+    }
+    function renderForo() {
+        const wall = document.getElementById('foro-wall');
+        wall.innerHTML = '';
+        const posts = JSON.parse(localStorage.getItem('foroPosts') || '[]');
+        if(posts.length === 0) {
+            wall.innerHTML = '<p style="color:#888;text-align:center;">Aún no hay mensajes. ¡Sé el primero en participar!</p>';
+        }
+        posts.reverse().forEach(post => {
+            wall.innerHTML += `
+                <div class="foro-msg-block">
+                    <div class="foro-msg-avatar">${getRandomAvatar(post.user)}</div>
+                    <div style="flex:1;">
+                        <div style="display:flex;align-items:center;gap:8px;">
+                            <strong>${post.user}</strong>
+                            <span class="foro-msg-date">${new Date(post.date).toLocaleString()}</span>
+                        </div>
+                        <p>${post.msg}</p>
+                    </div>
+                </div>
+            `;
+        });
+    }
+    document.getElementById('foro-form').onsubmit = function(e) {
+        e.preventDefault();
+        const user = document.getElementById('foro-nombre').value.trim();
+        const msg = document.getElementById('foro-mensaje').value.trim();
+        if (!user || !msg) return;
+        const posts = JSON.parse(localStorage.getItem('foroPosts') || '[]');
+        posts.push({ user, msg, date: new Date().toISOString() });
+        localStorage.setItem('foroPosts', JSON.stringify(posts));
+        this.reset();
+        renderForo();
+    };
+    renderForo();
+    </script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html> 

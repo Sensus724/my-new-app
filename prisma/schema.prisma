@@ -1,0 +1,145 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  name      String?
+  password  String
+  role      Role     @default(USER)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Relaciones
+  hamiltonTests HamiltonTest[]
+  anxietyLogs   AnxietyLog[]
+  activities    Activity[]
+  progress      Progress[]
+  stressTests   StressTest[]
+  depressionTests DepressionTest[]
+
+  @@map("users")
+}
+
+model HamiltonTest {
+  id        String   @id @default(cuid())
+  userId    String
+  score     Int
+  answers   Json     // Respuestas del test
+  result    String   // Interpretación del resultado
+  createdAt DateTime @default(now())
+
+  // Relaciones
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("hamilton_tests")
+}
+
+model AnxietyLog {
+  id          String   @id @default(cuid())
+  userId      String
+  anxietyLevel Int     // 1-10
+  description String?
+  triggers    String[] // Array de triggers
+  symptoms    String[] // Array de síntomas
+  createdAt   DateTime @default(now())
+
+  // Relaciones
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("anxiety_logs")
+}
+
+model Activity {
+  id          String   @id @default(cuid())
+  userId      String
+  title       String
+  description String?
+  type        ActivityType
+  completed   Boolean  @default(false)
+  scheduledAt DateTime?
+  completedAt DateTime?
+  createdAt   DateTime @default(now())
+
+  // Relaciones
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("activities")
+}
+
+model Progress {
+  id        String   @id @default(cuid())
+  userId    String
+  metric    String   // Tipo de métrica (anxiety_level, mood, etc.)
+  value     Float
+  date      DateTime @default(now())
+  notes     String?
+
+  // Relaciones
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("progress")
+}
+
+model ContactMessage {
+  id      String @id @default(cuid())
+  name    String
+  email   String
+  subject String
+  message String
+  read    Boolean @default(false)
+  createdAt DateTime @default(now())
+
+  @@map("contact_messages")
+}
+
+model StressTest {
+  id        String   @id @default(cuid())
+  userId    String
+  score     Int
+  answers   Json
+  level     String
+  createdAt DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("stress_tests")
+}
+
+model DepressionTest {
+  id        String   @id @default(cuid())
+  userId    String
+  score     Int
+  answers   Json
+  level     String
+  createdAt DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("depression_tests")
+}
+
+enum Role {
+  USER
+  ADMIN
+  THERAPIST
+}
+
+enum ActivityType {
+  BREATHING
+  MEDITATION
+  EXERCISE
+  JOURNALING
+  THERAPY_SESSION
+  SOCIAL_ACTIVITY
+  OTHER
+}

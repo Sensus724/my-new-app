@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test de Ansiedad de Hamilton | Sensus</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navegación -->
+    <header class="main-header">
+        <nav class="main-nav">
+            <div class="nav-container">
+                <div class="logo">
+                    <span>Sensus</span>
+                </div>
+                <div class="nav-links">
+                    <a href="index.html" class="nav-item"><i class="fas fa-home"></i>Inicio</a>
+                    <a href="anxiety-types.html" class="nav-item"><i class="fas fa-brain"></i>Tipos de Ansiedad</a>
+                    <a href="evaluation.html" class="nav-item"><i class="fas fa-clipboard-check"></i>Evaluación</a>
+                    <a href="therapeutic-help.html" class="nav-item"><i class="fas fa-hands-helping"></i>Ayuda Terapéutica</a>
+                    <a href="blog.html" class="nav-item"><i class="fas fa-blog"></i>Blog</a>
+                    <a href="contact.html" class="nav-item"><i class="fas fa-envelope"></i>Contacto</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main style="margin-top:120px;position:relative;overflow:hidden;">
+        <div id="particles-hamilton" class="section-particles" style="position:absolute;top:0;left:0;width:100%;height:100%;z-index:0;"></div>
+        <div style="position:relative;z-index:1;">
+        <section class="hamilton-test-section" id="hamiltonTest">
+            <div class="container">
+                <h2>Test de Ansiedad de Hamilton</h2>
+                <p class="section-description">Evalúa tu nivel de ansiedad con nuestro test validado científicamente</p>
+                <div class="test-container">
+                    <div class="test-intro">
+                        <h3>Instrucciones</h3>
+                        <p>Este test consta de 14 preguntas que evalúan diferentes aspectos de la ansiedad. Por favor, responde cada pregunta según cómo te has sentido en la última semana.</p>
+                        <button class="start-test-btn" id="startTest" type="button">Comenzar Test</button>
+                    </div>
+                    <form id="hamiltonForm" class="test-form" style="display: none;">
+                        <!-- Preguntas -->
+                        <!-- Se copian las 14 preguntas del test de Hamilton -->
+                        <div class="question-group">
+                            <h4>1. Estado de ánimo ansioso</h4>
+                            <p class="question-desc">¿Con qué frecuencia te has sentido nervioso, inquieto o con sensación de peligro inminente?</p>
+                            <div class="options">
+                                <label><input type="radio" name="q1" value="0" required> Ausente</label>
+                                <label><input type="radio" name="q1" value="1" required> Leve</label>
+                                <label><input type="radio" name="q1" value="2" required> Moderado</label>
+                                <label><input type="radio" name="q1" value="3" required> Grave</label>
+                                <label><input type="radio" name="q1" value="4" required> Muy grave</label>
+                            </div>
+                        </div>
+                        <div class="question-group">
+                            <h4>2. Tensión</h4>
+                            <p class="question-desc">¿Has sentido tensión muscular, incapacidad para relajarte o estar en constante alerta?</p>
+                            <div class="options">
+                                <label><input type="radio" name="q2" value="0" required> Ausente</label>
+                                <label><input type="radio" name="q2" value="1" required> Leve</label>
+                                <label><input type="radio" name="q2" value="2" required> Moderado</label>
+                                <label><input type="radio" name="q2" value="3" required> Grave</label>
+                                <label><input type="radio" name="q2" value="4" required> Muy grave</label>
+                            </div>
+                        </div>
+                        <div class="question-group">
+                            <h4>3. Miedos</h4>
+                            <p class="question-desc">¿Has experimentado miedos irracionales, temor a que ocurra algo malo o miedo a perder el control?</p>
+                            <div class="options">
+                                <label><input type="radio" name="q3" value="0" required> Ausente</label>
+                                <label><input type="radio" name="q3" value="1" required> Leve</label>
+                                <label><input type="radio" name="q3" value="2" required> Moderado</label>
+                                <label><input type="radio" name="q3" value="3" required> Grave</label>
+                                <label><input type="radio" name="q3" value="4" required> Muy grave</label>
+                            </div>
+                        </div>
+                        <div class="question-group">
+                            <h4>4. Insomnio</h4>
+                            <p class="question-desc">¿Has tenido dificultades para dormir, mantener el sueño o has despertado frecuentemente durante la noche?</p>
+                            <div class="options">
+                                <label><input type="radio" name="q4" value="0" required> Ausente</label>
+                                <label><input type="radio" name="q4" value="1" required> Leve</label>
+                                <label><input type="radio" name="q4" value="2" required> Moderado</label>
+                                <label><input type="radio" name="q4" value="3" required> Grave</label>
+                                <label><input type="radio" name="q4" value="4" required> Muy grave</label>
+                            </div>
+                        </div>
+                        <div class="question-group">
+                            <h4>5. Concentración</h4>
+                            <p class="question-desc">¿Te ha costado concentrarte, mantener la atención o tomar decisiones?</p>
+                            <div class="options">
+                                <label><input type="radio" name="q5" value="0" required> Ausente</label>
+                                <label><input type="radio" name="q5" value="1" required> Leve</label>
+                                <label><input type="radio" name="q5" value="2" required> Moderado</label>
+                                <label><input type="radio" name="q5" value="3" required> Grave</label>
+                                <label><input type="radio" name="q5" value="4" required> Muy grave</label>
+                            </div>
+                        </div>
+                        <div class="question-group">
+                            <h4>6. Estado de ánimo depresivo</h4>
+                            <p class="question-desc">¿Has sentido tristeza, desánimo, falta de energía o ganas de llorar?</p>
+                            <div class="options">
+                                <label><input type="radio" name="q6" value="0" required> Ausente</label>
+                                <label><input type="radio" name="q6" value="1" required> Leve</label>
+                                <label><input type="radio" name="q6" value="2" required> Moderado</label>
+                                <label><input type="radio" name="q6" value="3" required> Grave</label>
+                                <label><input type="radio" name="q6" value="4" required> Muy grave</label>
+                            </div>
+                        </div>
+                        <div class="question-group">
+                            <h4>7. Sensaciones somáticas (musculares)</h4>
+                            <p class="question-desc">¿Has sentido dolores, rigidez o molestias musculares sin causa aparente?</p>
+                            <div class="options">
+                                <label><input type="radio" name="q7" value="0" required> Ausente</label>
+                                <label><input type="radio" name="q7" value="1" required> Leve</label>
+                                <label><input type="radio" name="q7" value="2" required> Moderado</label>
+                                <label><input type="radio" name="q7" value="3" required> Grave</label>
+                                <label><input type="radio" name="q7" value="4" required> Muy grave</label>
+                            </div>
+                        </div>
+                        <div class="question-group">
+                            <h4>8. Sensaciones somáticas (sensoriales)</h4>
+                            <p class="question-desc">¿Has notado hormigueos, entumecimiento, sensación de calor o frío sin explicación médica?</p>
+                            <div class="options">
+                                <label><input type="radio" name="q8" value="0" required> Ausente</label>
+                                <label><input type="radio" name="q8" value="1" required> Leve</label>
+                                <label><input type="radio" name="q8" value="2" required> Moderado</label>
+                                <label><input type="radio" name="q8" value="3" required> Grave</label>
+                                <label><input type="radio" name="q8" value="4" required> Muy grave</label>
+                            </div>
+                        </div>
+                        <div class="question-group">
+                            <h4>9. Síntomas cardiovasculares</h4>
+                            <p class="question-desc">¿Has sentido palpitaciones, dolor en el pecho, taquicardia o presión en el pecho?</p>
+                            <div class="options">
+                                <label><input type="radio" name="q9" value="0" required> Ausente</label>
+                                <label><input type="radio" name="q9" value="1" required> Leve</label>
+                                <label><input type="radio" name="q9" value="2" required> Moderado</label>
+                                <label><input type="radio" name="q9" value="3" required> Grave</label>
+                                <label><input type="radio" name="q9" value="4" required> Muy grave</label>
+                            </div>
+                        </div>
+                        <div class="question-group">
+                            <h4>10. Síntomas respiratorios</h4>
+                            <p class="question-desc">¿Has tenido dificultad para respirar, sensación de ahogo o respiración acelerada?</p>
+                            <div class="options">
+                                <label><input type="radio" name="q10" value="0" required> Ausente</label>
+                                <label><input type="radio" name="q10" value="1" required> Leve</label>
+                                <label><input type="radio" name="q10" value="2" required> Moderado</label>
+                                <label><input type="radio" name="q10" value="3" required> Grave</label>
+                                <label><input type="radio" name="q10" value="4" required> Muy grave</label>
+                            </div>
+                        </div>
+                        <div class="question-group">
+                            <h4>11. Síntomas gastrointestinales</h4>
+                            <p class="question-desc">¿Has tenido molestias digestivas como náuseas, dolor abdominal, diarrea o estreñimiento?</p>
+                            <div class="options">
+                                <label><input type="radio" name="q11" value="0" required> Ausente</label>
+                                <label><input type="radio" name="q11" value="1" required> Leve</label>
+                                <label><input type="radio" name="q11" value="2" required> Moderado</label>
+                                <label><input type="radio" name="q11" value="3" required> Grave</label>
+                                <label><input type="radio" name="q11" value="4" required> Muy grave</label>
+                            </div>
+                        </div>
+                        <div class="question-group">
+                            <h4>12. Síntomas genitourinarios</h4>
+                            <p class="question-desc">¿Has notado cambios en la frecuencia urinaria, molestias al orinar o alteraciones sexuales?</p>
+                            <div class="options">
+                                <label><input type="radio" name="q12" value="0" required> Ausente</label>
+                                <label><input type="radio" name="q12" value="1" required> Leve</label>
+                                <label><input type="radio" name="q12" value="2" required> Moderado</label>
+                                <label><input type="radio" name="q12" value="3" required> Grave</label>
+                                <label><input type="radio" name="q12" value="4" required> Muy grave</label>
+                            </div>
+                        </div>
+                        <div class="question-group">
+                            <h4>13. Síntomas autonómicos</h4>
+                            <p class="question-desc">¿Has sentido sudoración excesiva, sequedad de boca, mareos o sensación de desmayo?</p>
+                            <div class="options">
+                                <label><input type="radio" name="q13" value="0" required> Ausente</label>
+                                <label><input type="radio" name="q13" value="1" required> Leve</label>
+                                <label><input type="radio" name="q13" value="2" required> Moderado</label>
+                                <label><input type="radio" name="q13" value="3" required> Grave</label>
+                                <label><input type="radio" name="q13" value="4" required> Muy grave</label>
+                            </div>
+                        </div>
+                        <div class="question-group">
+                            <h4>14. Comportamiento durante la entrevista</h4>
+                            <p class="question-desc">¿Has notado inquietud motora, dificultad para quedarte quieto o movimientos nerviosos?</p>
+                            <div class="options">
+                                <label><input type="radio" name="q14" value="0" required> Ausente</label>
+                                <label><input type="radio" name="q14" value="1" required> Leve</label>
+                                <label><input type="radio" name="q14" value="2" required> Moderado</label>
+                                <label><input type="radio" name="q14" value="3" required> Grave</label>
+                                <label><input type="radio" name="q14" value="4" required> Muy grave</label>
+                            </div>
+                        </div>
+                        <button type="submit" class="submit-test-btn">Evaluar Resultados</button>
+                    </form>
+                    <div id="testResults" class="test-results" style="display: none;">
+                        <h3>Resultados de tu Evaluación</h3>
+                        <div class="score-container">
+                            <div class="score-circle">
+                                <span id="totalScore">0</span>
+                                <span class="score-label">Puntos</span>
+                            </div>
+                        </div>
+                        <div class="result-description">
+                            <h4>Interpretación</h4>
+                            <p id="resultText"></p>
+                        </div>
+                        <div class="recommendations">
+                            <h4>Recomendaciones</h4>
+                            <ul id="recommendationsList"></ul>
+                        </div>
+                        <button class="retake-test-btn" id="retakeTest">Realizar Test Nuevamente</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Sensus</h3>
+                    <p>Tu compañero en el camino hacia el bienestar mental.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Enlaces Rápidos</h3>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="anxiety-types.html">Tipos de Ansiedad</a></li>
+                        <li><a href="evaluation.html">Evaluación</a></li>
+                        <li><a href="therapeutic-help.html">Ayuda Terapéutica</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contacto</h3>
+                    <p>Email: sensusdes@gmail.com</p>
+                    <p>Instagram: <a href="https://instagram.com/sensus_des" target="_blank">@sensus_des</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Sensus. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="script.js"></script>
+    <script src="hamilton.js"></script>
+</body>
+</html> 

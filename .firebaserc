@@ -1,0 +1,8 @@
+{
+  "projects": {
+    "default": "sensus-a",
+    "Sensus": "sensus-a"
+  },
+  "targets": {},
+  "etags": {}
+}
