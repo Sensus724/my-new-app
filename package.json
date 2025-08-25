@@ -7,7 +7,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "docker-build": "docker build -t sensus-web-app .",
+    "docker-run": "docker run -p 3000:3000 sensus-web-app"
   },
   "dependencies": {
     "@google-cloud/bigquery": "^8.1.1",

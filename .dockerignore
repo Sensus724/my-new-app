@@ -1,0 +1,13 @@
+node_modules
+.next
+Dockerfile
+.git
+.gitignore
+README.md
+pubsub-debug.log
+.firebase
+static_files
+docs
+image
+env.development
+*.log
